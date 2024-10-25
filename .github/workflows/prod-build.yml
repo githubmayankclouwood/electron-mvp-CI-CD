@@ -30,4 +30,3 @@ jobs:
           aws_bucket: apps-auto-update
           source_dir: "release/GetMyInvoices/${{ steps.get_version.outputs.version }}"
           destination_dir: "prod"
-          exclude: 'win-unpacked/**,builder-debug.yml,builder-effective-config.yml'
