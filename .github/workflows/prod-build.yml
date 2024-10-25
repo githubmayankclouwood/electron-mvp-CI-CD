@@ -1,0 +1,32 @@
+name: Prod Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_on_win:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@master
+        with:
+          node-version: 20.11.1
+      - name: Get version from package.json
+        id: get_version
+        run: node getVersion.ts
+      - name: Installing dependencies...
+        run: npm i
+      - name: Packaging Electron application...
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npm run build:nosign:prod
+      - name: Uploading files to S3...
+        uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_bucket: apps-auto-update
+          source_dir: "release/GetMyInvoices/${{ steps.get_version.outputs.version }}"
+          destination_dir: "prod"
