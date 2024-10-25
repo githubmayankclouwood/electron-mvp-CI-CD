@@ -1,6 +1,6 @@
 {
   "name": "GetMyInvoices",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist-electron/main/index.js",
   "description": "Automated fetching of invoices",
   "author": "fino data services GmbH <bk@fino.group>",
