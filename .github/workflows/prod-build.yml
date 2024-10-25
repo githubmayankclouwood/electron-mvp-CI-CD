@@ -15,7 +15,7 @@ jobs:
           node-version: 20.11.1
       - name: Get version from package.json
         id: get_version
-        run: node getVersion.ts
+        run: node getVersion.js
       - name: Installing dependencies...
         run: npm i
       - name: Packaging Electron application...
