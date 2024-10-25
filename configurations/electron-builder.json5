@@ -1,0 +1,63 @@
+/**
+ * @see https://www.electron.build/configuration/configuration
+ */
+{
+  "appId": "GetMyInvoices",
+  "asar": true,
+  "directories": {
+    "output": "release/${name}/${version}"
+  },
+  "files": [
+    "dist-electron",
+    "dist"
+  ],
+  "extraFiles": [
+    {
+      "from": "resources/${os}/${arch}",
+      "to": "Resources/browser",
+      "filter": ["**/*"]
+    }, 
+    {
+      "from": "resources/${os}/app",
+      "to": "Resources/browser",
+      "filter": ["**/*"]
+    },
+    {
+      "from": "resources/browser-data",
+      "to": "Resources/browser-data",
+      "filter": ["**/*"]
+    }
+  ],
+  "mac": {
+    "icon": "build/icon.icns",
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": [
+      "dmg",
+      "zip"
+    ]
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "icon": "build/icon.ico",
+    "artifactName": "${productName}_${version}.${ext}"
+  },
+  "nsis": {
+    "installerSidebar": "build/sidebar.bmp",
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false
+  },
+  "publish": {
+    "provider": "generic",
+    "channel": "latest",
+    "url": "https://github.com/electron-vite/electron-mvp/releases/download/v0.0.1/"
+  }
+}

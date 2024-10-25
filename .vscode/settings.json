@@ -1,0 +1,24 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.tsc.autoDetect": "off",
+    "prettier.requireConfig": false,
+    "json.schemas": [
+        {
+            "fileMatch": ["/*electron-builder.json5", "/*electron-builder.json"],
+            "url": "https://json.schemastore.org/electron-builder"
+        }
+    ],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
+    "prettier.trailingComma": "es5",
+    "prettier.resolveGlobalModules": true,
+    "prettier.semi": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
+}

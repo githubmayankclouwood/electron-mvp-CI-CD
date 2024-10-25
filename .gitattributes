@@ -1,0 +1,5 @@
+resources/linux filter=lfs diff=lfs merge=lfs -text
+resources/mac filter=lfs diff=lfs merge=lfs -text
+resources/win filter=lfs diff=lfs merge=lfs -text
+resources/mac/**/* filter=lfs diff=lfs merge=lfs -text
+* !text !filter !merge !diff

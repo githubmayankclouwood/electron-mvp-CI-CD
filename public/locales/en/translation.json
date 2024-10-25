@@ -1,0 +1,26 @@
+{
+  "app.title": "GetMyInvoices",
+  "passwordManager.label": "Password Manager",
+  "passwordManager.none": "None",
+  "passwordManager.1Password": "1Password",
+  "passwordManager.dashlane": "Dashlane",
+  "passwordManager.lastPass": "LastPass",
+  "passwordManager.nordPass": "NordPass",
+  "passwordManager.bitwarden": "Bitwarden",
+  "selectChrome.title": "Select Chrome",
+  "btn.start": "Start",
+  "btn.goTo": "Go to",
+  "btn.bookmarks": "Bookmarks",
+  "btn.downloadPdf": "Download PDF",
+  "alert.launchChrome": "Launch chrome first using start button.",
+  "alert.chromeNotFound": "Chrome not found!",
+  "files.inDirectory": "Files in Directory",
+  "selectChrome": {
+    "label": "Select Chrome",
+    "option": "Chrome"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "select": "Select"
+  }
+}

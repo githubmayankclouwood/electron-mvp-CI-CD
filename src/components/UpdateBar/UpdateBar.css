@@ -1,0 +1,24 @@
+.update-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px 20px;
+    background-color: #4caf50; /* Change color as needed */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+    transition: transform 0.3s ease;
+}
+
+.update-bar button {
+    background-color: white;
+    color: #0056b3;
+    padding: 1px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
