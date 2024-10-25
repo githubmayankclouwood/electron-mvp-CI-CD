@@ -25,11 +25,9 @@ jobs:
       - name: Uploading files to S3...
         uses: shallwefootball/s3-upload-action@master
         with:
-          args: |
-            release/GetMyInvoices/${{ steps.get_version.outputs.version }}/GetMyInvoices_${{ steps.get_version.outputs.version }}.exe
-            release/GetMyInvoices/${{ steps.get_version.outputs.version }}/GetMyInvoices_${{ steps.get_version.outputs.version }}.exe.blockmap
-            release/GetMyInvoices/${{ steps.get_version.outputs.version }}/latest.yml
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_bucket: apps-auto-update
+          source_dir: "release/GetMyInvoices/${{ steps.get_version.outputs.version }}"
           destination_dir: "prod"
+          include: 'GetMyInvoices_${{ steps.get_version.outputs.version }}.exe,GetMyInvoices_${{ steps.get_version.outputs.version }}.exe.blockmap,latest.yml'
